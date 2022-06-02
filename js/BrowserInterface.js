@@ -11,7 +11,18 @@
  */
 (function($) {
 
-// Handle clicking on settings icon
+  /************ Start hard coded settings ******************/
+
+  // How long a non matching card is displayed once clicked.
+  var nonMatchingCardTime = 1000;
+
+  // Shuffle card images: How many different images are available to shuffle
+  // from?
+  var imagesAvailable = 20;
+
+  /************ End hard coded settings ******************/
+
+  // Handle clicking on settings icon
   var settings = document.getElementById('memory--settings-icon');
   var modal = document.getElementById('memory--settings-modal');
   var handleOpenSettings = function (event) {
@@ -20,15 +31,11 @@
   };
   settings.addEventListener('click', handleOpenSettings);
 
-// Handle settings form submission
-  var reset = document.getElementById('memory--settings-reset');
-  var handleSettingsSubmission = function (event) {
-    event.preventDefault();
-
-    var selectWidget = document.getElementById("memory--settings-grid").valueOf();
-    var grid = selectWidget.options[selectWidget.selectedIndex].value;
+  // Handle settings form submission
+  var handleSettingsSubmission = function() {
+    var grid = '4x5';
     var gridValues = grid.split('x');
-    var cards = $.initialize(Number(gridValues[0]), Number(gridValues[1]));
+    var cards = $.initialize(Number(gridValues[0]), Number(gridValues[1]), imagesAvailable);
 
     if (cards) {
       document.getElementById('memory--settings-modal').classList.remove('show');
@@ -39,7 +46,6 @@
     }
 
   };
-  reset.addEventListener('click', handleSettingsSubmission);
 
   // Handle clicking on card
   var handleFlipCard = function (event) {
@@ -58,38 +64,20 @@
         var childNodes = document.getElementById('memory--cards').childNodes;
         childNodes[status.args[0]].classList.remove('clicked');
         childNodes[status.args[1]].classList.remove('clicked');
-      }.bind(status), 500);
+      }.bind(status), nonMatchingCardTime);
     }
     else if (status.code == 4) {
       var score = parseInt((($.attempts - $.mistakes) / $.attempts) * 100, 10);
       var message = getEndGameMessage(score);
 
       document.getElementById('memory--end-game-message').textContent = message;
-      document.getElementById('memory--end-game-score').textContent =
-          'Score: ' + score + ' / 100';
-
       document.getElementById("memory--end-game-modal").classList.toggle('show');
     }
 
   };
 
   var getEndGameMessage = function(score) {
-    var message = "";
-
-    if (score == 100) {
-      message = "Amazing job!"
-    }
-    else if (score >= 70 ) {
-      message = "Great job!"
-    }
-    else if (score >= 50) {
-      message = "Great job!"
-    }
-    else {
-      message = "You can do better.";
-    }
-
-    return message;
+    return "Here's the password: nicknames";
   }
 
   // Build grid of cards
@@ -176,5 +164,7 @@
 
     return flipContainer;
   };
+
+  handleSettingsSubmission();
 
 })(MemoryGame);
