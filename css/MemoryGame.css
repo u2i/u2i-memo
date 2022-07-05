@@ -238,64 +238,40 @@ body {
 }
 
 .back.card-1 {
-  background-image: url(../images/fruits/KamilB.jpg);
-}
-.back.card-2 {
-  background-image: url(../images/fruits/KamilK.jpg);
-}
-.back.card-3 {
-  background-image: url(../images/fruits/KamilWnek.png);
-}
-.back.card-4 {
-  background-image: url(../images/fruits/LukaszKieda.jpg);
-}
-.back.card-5 {
-  background-image: url(../images/fruits/LukaszKudyba.jpg);
-}
-.back.card-6 {
-  background-image: url(../images/fruits/LukaszM.jpg);
-}
-.back.card-7 {
   background-image: url(../images/fruits/MichalWalawender.jpg);
 }
-.back.card-8 {
+.back.card-2 {
   background-image: url(../images/fruits/MichalMisiarek.png);
 }
-.back.card-9 {
+.back.card-3 {
   background-image: url(../images/fruits/MichalC.jpg);
 }
-.back.card-10 {
+.back.card-4 {
   background-image: url(../images/fruits/MichalKnapik.jpg);
 }
-.back.card-11 {
+.back.card-5 {
   background-image: url(../images/fruits/MichalKrawczyk.jpg);
 }
-.back.card-12 {
+.back.card-6 {
   background-image: url(../images/fruits/MichalP.jpg);
 }
-.back.card-13 {
-  background-image: url(../images/fruits/PiotrekKotnis.jpg);
-}
-.back.card-14 {
-  background-image: url(../images/fruits/PiotrekKucharski.jpg);
-}
-.back.card-15 {
-  background-image: url(../images/fruits/PiotrekL.jpg);
-}
-.back.card-16 {
+.back.card-7 {
   background-image: url(../images/fruits/TomaszRosiek.png);
 }
-.back.card-17 {
+.back.card-8 {
   background-image: url(../images/fruits/TomekCh.jpg);
 }
-.back.card-18 {
+.back.card-9 {
   background-image: url(../images/fruits/TomekG.jpg);
 }
-.back.card-19 {
+.back.card-10 {
   background-image: url(../images/fruits/TomekGu.jpg);
 }
-.back.card-20 {
+.back.card-11 {
   background-image: url(../images/fruits/TomekH.jpg);
+}
+.back.card-12 {
+  background-image: url(../images/fruits/u2i.png);
 }
 
 /** Matching Cards **/
