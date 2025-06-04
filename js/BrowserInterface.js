@@ -18,7 +18,7 @@
 
   // Shuffle card images: How many different images are available to shuffle
   // from?
-  var imagesAvailable = 13;
+  var imagesAvailable = 12;
 
   /************ End hard coded settings ******************/
 
@@ -33,7 +33,7 @@
 
   // Handle settings form submission
   var handleSettingsSubmission = function() {
-    var grid = '4x7';
+    var grid = '4x6';
     var gridValues = grid.split('x');
     var cards = $.initialize(Number(gridValues[0]), Number(gridValues[1]), imagesAvailable);
 
